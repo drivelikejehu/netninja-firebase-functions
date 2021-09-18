@@ -13,3 +13,10 @@ exports.randomNumber = functions.https.onRequest((request, response) => {
 exports.toTheDojo = functions.https.onRequest((request, response) => {
   response.redirect('https://www.thenetninja.co.uk');
 });
+
+// http callable function
+
+exports.sayHello = functions.https.onCall((data, context) => {
+  const name = data.name;
+  return `hello ${name}`;
+});
